@@ -5,8 +5,8 @@
 <head>
     <title>mediapark</title>
     <link rel="stylesheet" type="text/css" href="media.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="media.js"></script>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -16,170 +16,189 @@
         <header class="header" id="header">
             <h2>ntproject</h2>
             <ul>
-                <li><a href="#header">Pradžia</a></li>
-                <li><a href="targetname">Pasiūlymai</a></li>
+                <li><a href="#main">Pradžia</a></li>
+                <li><a href="#arrow">Pasiūlymai</a></li>
                 <li><a href="#Naujienos">Naujienos</a></li>
-                <li><a href="#additional-info">Kontaktai</a></li>
+                <li><a href="#more">Kontaktai</a></li>
             </ul>
         </header>
-
-        <h2> Lorem ipsum dolor sit amet conset</h2>
-        <main class="main container">
-            <!-- <div class="path">
-                kazkas
-            </div> -->
-
-
-            <div class="flats container">
-                <!-- <button>
-                <-</button>  -->
+        <main class="main container" id="main">
+            <h2 id="title"> Lorem ipsum dolor <br /> sit amet conset</h2>
+            <div class="elipse"> </div>
+            <div>
+                <button class="back flats-buttons" onclick="changeImage()">
+                    < </button> <button class="next flats-buttons" onclick="changeImage()"> >
+                </button>
+            </div>
+            <div class=" flats container">
                 <div class="flat">
-                    <img src="images/jason.png">
+                    <img src="images/jason.png" id="0">
                     <h3> Lorem ipsum dolor sit amet</h3>
                     <p> Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     </p>
+                    <button class="arrow"> > </button>
                 </div>
                 <div class="flat">
-                    <img src="images/jason.png">
+                    <img src="images/tu.png" id="1">
                     <h3> Lorem ipsum dolor sit amet</h3>
                     <p> Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     </p>
+                    <button class="arrow"> > </button>
                 </div>
                 <div class="flat">
-                    <img src="images/jason.png">
+                    <img src="images/kiril.png" id="2">
                     <h3> Lorem ipsum dolor sit amet</h3>
                     <p> Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     </p>
+                    <button class="arrow" id="arrow"> > </button>
                 </div>
-
-                <!-- <button>
-        -></button> -->
             </div>
-
-
         </main>
-
-        <!-- <button type="submit" class="circle" value=""></button> -->
-
         <div class="table-container">
             <div class="table-buttons">
-
-                <!-- <div class="dropdown-buttons"> -->
-                <button type="submit" class="dropdown"> Plotas >
-
-                    <div class="dropdown-content">
-                        <a href="/">30.00</a>
-                        <a href="/">35.00</a>
-                        <a href="/">50.17</a>
-                        <a href="/">60.00</a>
-                    </div>
-                </button>
-
-
-                <td>
-                    <button type="submit" class="dropdown"> Kambarių skaičius >
-                        <div class="dropdown-content">
-                            <a href="/">1</a>
-                            <a href="/">2</a>
-                        </div>
-                    </button>
-                </td>
-                <td>
-                    <button type="submit" class="dropdown"> Langų orientacija >
-                        <div class="dropdown-content">
-                            <a href="/">Pietūs</a>
-                            <a href="/">Rytai</a>
-                            <a href="/">Šiaurė</a>
-                            <a href="/">Vakarai</a>
-                        </div>
-                    </button>
-                </td>
-                <td>
-
-                    <button type="submit" class="dropdown"> Baigtumas >
-                        <div class="dropdown-content">
-                            <a href="/">Pastatyta</a>
-                            <a href="/">Statoma</a>
-
-                        </div>
-                    </button>
-                </td>
-
+                <select name="Plotas" id="list" onchange="filterTable(this)">
+                    <option>Plotas</option>
+                    <option> 30 </option>
+                    <option> 35 </option>
+                    <option> 50 </option>
+                    <option> 60 </option>
+                </select>
+                <select name="Kambariu-skaicius" id="list" onchange="filterTable(this)">
+                    <option> Kambarių skaičius </option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <select name="Langu-orientacija" id="list" onchange="filterTable(this)">
+                    <option>Langų orientacija</option>
+                    <option>Pietūs</option>
+                    <option>Rytai</option>
+                    <option>Šiaurė</option>
+                    <option>Vakarai</option>
+                </select>
+                <select name="Baigtumas" id="list" onchange="filterTable(this)">
+                    <option>Baigtumas</option>
+                    <option>Pastatyta</option>
+                    <option>Statoma</option>
+                </select>
             </div>
-            <table>
+            <table id="table">
                 <tr>
                     <th>Nuolaida</th>
-                    <th>Namo nr.</th>
-                    <th>Plotas m2</th>
-                    <th>Kambarių skaičius</th>
-                    <th>Langų orientacija</th>
+                    <th>Namo <br /> nr.</th>
+                    <th>Plotas <br /> m2</th>
+                    <th>Kambarių <br /> skaičius</th>
+                    <th>Langų <br /> orientacija</th>
                     <th>Baigtumas</th>
                 </tr>
                 <tr>
                     <td>-5%</td>
                     <td>1</td>
-                    <td>-</td>
-                    <td>-10%</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td>50.17</td>
+                    <td>3</td>
+                    <td>Pietūs</td>
+                    <td>Pastatyta</td>
 
                 </tr>
                 <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
+                    <td>-5%</td>
+                    <td>1</td>
+                    <td>60.00</td>
+                    <td>4</td>
+                    <td>Rytai</td>
+                    <td>Pastatyta</td>
                 </tr>
                 <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
+                    <td>-</td>
+                    <td>2</td>
+                    <td>35.00</td>
+                    <td>2</td>
+                    <td>Pietūs</td>
+                    <td>Pastatyta</td>
                 </tr>
                 <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
+                    <td>-10%</td>
+                    <td>1</td>
+                    <td>30.00</td>
+                    <td>1</td>
+                    <td>Pietūs</td>
+                    <td>Statoma</td>
                 </tr>
                 <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
+                    <td>-</td>
+                    <td>1</td>
+                    <td>60.00</td>
+                    <td>4</td>
+                    <td>Rytai</td>
+                    <td>Pastatyta</td>
                 </tr>
                 <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
+                    <td>-</td>
+                    <td>2</td>
+                    <td>35.00</td>
+                    <td>2</td>
+                    <td>Pietūs</td>
+                    <td>Pastatyta</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>1</td>
+                    <td>50.17</td>
+                    <td>3</td>
+                    <td>Pietūs</td>
+                    <td>Statoma</td>
+                </tr>
+                <tr>
+                    <td>-5%</td>
+                    <td>1</td>
+                    <td>60.00</td>
+                    <td>4</td>
+                    <td>Rytai</td>
+                    <td>Pastatyta</td>
+                </tr>
+                <tr>
+                    <td>-5%</td>
+                    <td>2</td>
+                    <td>35.00</td>
+                    <td>2</td>
+                    <td>Pietūs</td>
+                    <td>Pastatyta</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>1</td>
+                    <td>50.17</td>
+                    <td>3</td>
+                    <td>Pietūs</td>
+                    <td>Statoma</td>
+                </tr>
+                <tr>
+                    <td>-5%</td>
+                    <td>1</td>
+                    <td>60.00</td>
+                    <td>4</td>
+                    <td>Rytai</td>
+                    <td>Pastatyta</td>
+                </tr>
+                <tr>
+                    <td>-5%</td>
+                    <td>2</td>
+                    <td>35.00</td>
+                    <td>2</td>
+                    <td>Pietūs</td>
+                    <td id="Naujienos">Pastatyta</td>
                 </tr>
             </table>
         </div>
-        <!-- /////////////////////////// NAUJIENOS -->
 
-        <h2 id="Naujienos">Naujienos</h2>
+        <h2>Naujienos</h2>
         <section class="news">
-            <img src=" https://source.unsplash.com/user/jackie/likes/1600x900"">
-             <img src=" images/jason.png"> <img src="">
-            <img src="">
-            <img src="images/jason.png">
-            <img src="images/jason.png">
-            <button> Daugiau naujienų</button>
+            <div class="news-API"></div>
+            <div>
+                <button id="more"> Daugiau naujienų <span class="arrow"> > </span></button>
+            </div>
         </section>
-
-
-        <!-- /////////////////////////////////////////////////CONTACTS -->
 
         <section id="additional-info">
             <div class="contacts">
@@ -209,44 +228,36 @@
                     </div>
                 </address>
             </div>
-            <form>
+            <form name="requestForm" onsubmit="validateForm()">
                 <div class="form-fields">
                     <h1>Sužinok apie <br /> projektą daugiau</h1>
-
                     <div>
-                        <label for="name"></label>
-                        <input name="name" id="name" type="text" placeholder="Jūsų vardas" required> <br />
-
+                        <label for="Name"></label>
+                        <input name="name" id="name" type="text" placeholder="Jūsų vardas" required>
                     </div>
                     <div>
                         <label for="Email"> </label>
-                        <input name="email" type="text" placeholder="El. paštas" required> <br />
+                        <input name="email" type="email" placeholder="El. paštas" required
+                            data-errormessage-value-missing="Something's missing"
+                            data-errormessage-type-mismatch="Invalid!">
                     </div>
                     <div>
                         <label for="Phone"> </label>
-                        <input name="phone" type="text" placeholder="Telefono numeris" required> <br />
+                        <input name="phone" type="text" placeholder="Telefono numeris" required>
                     </div>
                     <div>
                         <label for="Message"> </label>
-                        <input name="message" type="text" placeholder="Žinutė" required> <br />
+                        <input name="message" type="text" placeholder="Žinutė" required>
                     </div>
-
                     <div>
                         <input id="agreed" name="agreed" type="checkbox" required>
                         <label for="agreed"> Lorem ipsum, dolor sit amet,
                             consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore minim ntprojects@info.com</label> <br />
+                            incididunt ut labore minim ntprojects@info.com</label>
                     </div>
-
-                </div>
-                <button>Siųsti --></button>
-
+                    <button>Siųsti <span class="arrow"> > </span></button>
             </form>
         </section>
-
-
-        <!-- //////////////////////////////////FOOOOTER -->
-
         <footer>
             <ul>
                 <h3>Apie statytoją</h3>
@@ -270,53 +281,10 @@
                 <a href="/" class="fa fa-facebook"></a>
                 <a href="/" class="fa fa-instagram"></a>
             </ul>
-
-
         </footer>
-
     </div>
 </body>
 <script>
-    const numItemsToGenerate = 6; //how many gallery items you want on the screen
-    const imageWidth = 480; //your desired image width in pixels
-    const imageHeight = 480; //desired image height in pixels
-    const collectionID = 1163637; //the collection ID from the original url
-    function renderGalleryItem() {
-        fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/`)
-            .then((response) => {
-                // let galleryItem = document.createElement('div');
-                // galleryItem.classList.add('gallery-item');
-
-                let news = Array.from(document.querySelector(".news").querySelectorAll("img"));
-                //console.log(news[0])
-                for (var i = 0; i < news.length; i++) {
-                    news[i].src = response.url
-
-                    //                 `
-                    //   <img class="news" src="${response.url}" alt="gallery image"/>
-                    // `
-                    //document.body.appendChild(galleryItem);
-
-                }
-            })
-    }
-    for (let i = 0; i < numItemsToGenerate; i++) {
-        renderGalleryItem();
-    }
-
-
-
-
-
-
-    ///https://medium.com/quick-code/how-to-quickly-generate-a-random-gallery-of-images-from-an-unsplash-collection-in-javascript-4ddb2a6a4faf
-    play = () => {
-        console.log("hey")
-    }
-
-    play();
-
-
 </script>
 
 </html>
