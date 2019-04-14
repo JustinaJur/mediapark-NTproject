@@ -1,4 +1,4 @@
-# mediapark technical assignment
+# mediapark NT project
 
 ## Technologies
 Project is made with: Vanilla JavaScript,
